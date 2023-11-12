@@ -1,0 +1,22 @@
+body {
+    background-color: #fafafa;
+}
+
+h1 {
+    color: #8a2be2;
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.btn {
+    background-color: #d7b8ec;
+    border-color: #6a0dad;
+    color: #6a0dad;
+}
+
+/* Cambia el color del botón cuando se pasa sobre él */
+.btn:hover {
+    background-color: #8a2be2;
+    border-color: #21003f;
+}
