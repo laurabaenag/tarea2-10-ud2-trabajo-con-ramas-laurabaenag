@@ -61,9 +61,9 @@
             label.textContent = texto;
             elemento.appendChild(label);
 
-        ulTareas.appendChild(elemento);
-        // Pongo en blanco el input de añadir tareas
-        nuevaTarea.value = "";
+            ulTareas.appendChild(elemento);
+            // Pongo en blanco el input de añadir tareas
+            nuevaTarea.value = "";
             const btnEliminar = document.createElement("button");
             //Este nombre dado a la clase es para el diseño de Bootstrap
             btnEliminar.className = "btn btn-danger btn-eliminar float-end";
