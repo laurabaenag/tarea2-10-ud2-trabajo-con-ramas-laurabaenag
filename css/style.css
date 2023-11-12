@@ -1,5 +1,15 @@
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: #fafafa;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {
@@ -7,6 +17,11 @@ h1 {
     font-family: "Oswald", sans-serif;
     font-weight: bold;
     font-style: italic;
+}
+
+#listaTareas {
+    width: 50%;
+    margin-top: 20px;
 }
 
 .btn {
