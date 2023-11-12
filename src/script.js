@@ -29,35 +29,53 @@
     }
 
     function anade() {
-        const elemento = document.createElement("li");
-        //Este nombre dado a la clase es para el diseño de Bootstrap
-        elemento.className = "list-group-item";
         const nuevaTarea = document.getElementById("nuevaTarea");
         const texto = nuevaTarea.value;
         const ulTareas = document.getElementById("listaTareas");
 
-        const checkbox = document.createElement("input");
-        checkbox.type = "checkbox";
-        //Este nombre dado a la clase es para el diseño de Bootstrap
-        checkbox.className = "form-check-input";
-        elemento.appendChild(checkbox);
+        if (texto !== "") {
+            const elemento = document.createElement("li");
+            //Este nombre dado a la clase es para el diseño de Bootstrap
+            elemento.className = "list-group-item";
+            const ul = document.getElementById("listaTareas");
 
-        // Creo el elemento label para mostrar el texto de la tarea
-        const label = document.createElement("label");
-        //Este nombre dado a la clase es para el diseño de Bootstrap
-        label.className = "form-check-label";
-        label.textContent = texto;
-        elemento.appendChild(label);
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            //Este nombre dado a la clase es para el diseño de Bootstrap
+            checkbox.className = "form-check-input";
+            elemento.appendChild(checkbox);
 
-        const btnEliminar = document.createElement("button");
-        //Este nombre dado a la clase es para el diseño de Bootstrap
-        btnEliminar.className = "btn btn-danger btn-eliminar float-end";
-        btnEliminar.textContent = "Eliminar";
-        elemento.appendChild(btnEliminar);
+            // Creo un evento change en el checkbox para cambiar de tachado o sin tachar
+            checkbox.addEventListener("change", function () {
+                if (checkbox.checked) {
+                    label.style.textDecoration = "line-through";
+                } else {
+                    label.style.textDecoration = "none";
+                }
+            });
+
+            // Creo el elemento label para mostrar el texto de la tarea
+            const label = document.createElement("label");
+            //Este nombre dado a la clase es para el diseño de Bootstrap
+            label.className = "form-check-label";
+            label.textContent = texto;
+            elemento.appendChild(label);
 
         ulTareas.appendChild(elemento);
         // Pongo en blanco el input de añadir tareas
         nuevaTarea.value = "";
+            const btnEliminar = document.createElement("button");
+            //Este nombre dado a la clase es para el diseño de Bootstrap
+            btnEliminar.className = "btn btn-danger btn-eliminar float-end";
+            btnEliminar.textContent = "Eliminar";
+            elemento.appendChild(btnEliminar);
+
+            ul.appendChild(elemento);
+            // Pongo en blanco el input de añadir tareas
+            nuevaTarea.value = "";
+        } else {
+            alert("No se ha introducido ninguna tarea.");
+        }
     }
 
     // Creo la funcion eliminar tarea
